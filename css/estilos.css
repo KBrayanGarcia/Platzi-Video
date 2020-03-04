@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Grid global */
+.container{
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: 400px;
+    grid-template-areas: 
+    "sidebar video video"
+    "sidebar infoVideo infoVideo"
+    "sidebar comentarios sugerencias";
+}
+/* sidebar */
+.sidebar{
+    grid-area: sidebar;
+}
+/* video */
+.video{
+    grid-area: video;
+}
+.info-video{
+    grid-area: infoVideo;
+}
+/* Comentario */
+.comentarios{
+    grid-area: comentarios;
+}
+/* sugerencias */
+.sugerencias{
+    grid-area: sugerencias;
+}
