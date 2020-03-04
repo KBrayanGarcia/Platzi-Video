@@ -5,19 +5,30 @@ body{
     font-size: 16px;
     font-family: Arial;
 }
+img{
+    width: 100%;
+}
+.boton{
+    text-decoration: none;
+    padding: 5px 15px;
+}
+.etiquetas{
+    border-radius: 15px;
+    padding: 5px 10px;
+    color: white;
+}
 /* Grid global */
 .container{
     width: 95%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 300px 1fr 1fr;
+    grid-template-columns: 300px 1.5fr 1fr 100px;
     grid-template-rows: 400px;
     grid-template-areas: 
-    "sidebar video video"
-    "sidebar infoVideo infoVideo"
-    "sidebar comentarios sugerencias";
-    
+    "sidebar video video video"
+    "sidebar infoVideo infoVideo infoVideo"
+    "sidebar comentarios sugerencias .";
 }
 /* sidebar */
 .sidebar{
@@ -42,6 +53,7 @@ body{
 }
 .foto-amigo{
     border-radius: 50%;
+    width: initial;
 }
 .nombre-amigo{
     margin-left: 10px;
@@ -52,12 +64,93 @@ body{
 }
 .info-video{
     grid-area: infoVideo;
+    padding: 25px 20px;
+    border-bottom: 1px solid black;
+}
+.vistas-video{
+    font-weight: 100;
+    color: gray;
+}
+.barra-herramientas-video{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.compartir-guardar-lista{
+    display: flex;
+}
+.boton.agregar{
+    background-color: #ff4260;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.boton.compartir,
+.boton.guardar{
+    text-align: center;
+    color: #545c6d;
+}
+.etiquetas.electronica{
+    background-color: #9b56fd;
+}
+.etiquetas.estudio{
+    background-color: #12ebc8;
+}
+.etiquetas.aprender{
+    background-color: #dc181e;
+}
+.etiquetas.autodidacta{
+    background-color: #ed3084;
 }
 /* Comentario */
 .comentarios{
     grid-area: comentarios;
+    padding: 30px;
+}
+.input-comentario{
+    padding: 10px 10px 10px 40px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #e7e7e7;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+    
+}
+.caja-input-comentar{
+    position: relative;
+}
+.foto-comentario.foto-amigo{
+    width: 30px;
+    height: 30px;
+}
+.foto-comentario{
+    position: absolute;
+    left: 5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+.comentario-perfil{
+    padding-left: 10px;
 }
 /* sugerencias */
 .sugerencias{
     grid-area: sugerencias;
+    padding: 30px;
+}
+.sugerencia{
+    padding: 15px 15px 15px 0;
+}
+.sugerencia p{
+    margin-top: 10px;
 }
