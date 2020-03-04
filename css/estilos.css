@@ -1,6 +1,9 @@
 *{
     margin: 0;
-    padding: 0;
+}
+body{
+    font-size: 16px;
+    font-family: Arial;
 }
 /* Grid global */
 .container{
@@ -14,10 +17,34 @@
     "sidebar video video"
     "sidebar infoVideo infoVideo"
     "sidebar comentarios sugerencias";
+    
 }
 /* sidebar */
 .sidebar{
     grid-area: sidebar;
+    background-color: #151b31;
+    color: white;
+    padding: 20px;
+}
+.logo-platzi{
+    width: 100%;
+}
+.lista-playlist-personal{
+    padding: 17px;
+}
+.lista-playlist-personal li{
+    padding: 10px 10px 10px 20px;
+}
+.amigo{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+.foto-amigo{
+    border-radius: 50%;
+}
+.nombre-amigo{
+    margin-left: 10px;
 }
 /* video */
 .video{
