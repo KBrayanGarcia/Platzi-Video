@@ -1,115 +1,145 @@
-*{
+* {
     margin: 0;
 }
-body{
+
+body {
     font-size: 16px;
     font-family: Arial;
 }
-img{
+
+img {
     width: 100%;
 }
-.boton{
+
+.boton {
     text-decoration: none;
     padding: 5px 15px;
 }
-.etiquetas{
+
+.etiquetas {
     border-radius: 15px;
     padding: 5px 10px;
     color: white;
+    display: inline-block;
+    margin: 5px;
 }
+
 /* Grid global */
-.container{
+.container {
     width: 95%;
-    max-width: 1400px;
+    max-width: 87.5em;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 300px 1.5fr 1fr 100px;
-    grid-template-rows: 400px;
-    grid-template-areas: 
-    "sidebar video video video"
-    "sidebar infoVideo infoVideo infoVideo"
-    "sidebar comentarios sugerencias .";
+    grid-template-columns: minmax(6.25em, 18.75em) 1.5fr 1fr 6.25em;
+    grid-template-rows: 25em;
+    grid-template-areas:
+        "sidebar video video video"
+        "sidebar infoVideo infoVideo infoVideo"
+        "sidebar comentarios sugerencias .";
 }
+
 /* sidebar */
-.sidebar{
+.sidebar {
     grid-area: sidebar;
     background-color: #151b31;
     color: white;
     padding: 20px;
 }
-.logo-platzi{
+
+.logo-platzi {
     width: 100%;
 }
-.lista-playlist-personal{
+
+.lista-playlist-personal {
     padding: 17px;
 }
-.lista-playlist-personal li{
+
+.lista-playlist-personal li {
     padding: 10px 10px 10px 20px;
 }
-.amigo{
+
+.amigo {
     display: flex;
     align-items: center;
     padding: 10px 0;
 }
-.foto-amigo{
+
+.foto-amigo {
     border-radius: 50%;
     width: initial;
 }
-.nombre-amigo{
+
+.nombre-amigo {
     margin-left: 10px;
 }
+
 /* video */
-.video{
+.video {
     grid-area: video;
 }
-.info-video{
+.video-caja{
+    max-width: 100%;
+}
+
+.info-video {
     grid-area: infoVideo;
-    padding: 25px 20px;
+    padding: 1.5625em 1.25em;
     border-bottom: 1px solid black;
 }
-.vistas-video{
+
+.vistas-video {
     font-weight: 100;
     color: gray;
 }
-.barra-herramientas-video{
+
+.barra-herramientas-video {
     margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.compartir-guardar-lista{
+
+.compartir-guardar-lista {
     display: flex;
 }
-.boton.agregar{
+
+.boton.agregar {
     background-color: #ff4260;
     border-radius: 15px;
     display: flex;
     align-items: center;
     color: white;
 }
+
 .boton.compartir,
-.boton.guardar{
+.boton.guardar {
     text-align: center;
     color: #545c6d;
 }
-.etiquetas.electronica{
+
+.etiquetas.electronica {
     background-color: #9b56fd;
 }
-.etiquetas.estudio{
+
+.etiquetas.estudio {
     background-color: #12ebc8;
 }
-.etiquetas.aprender{
+
+.etiquetas.aprender {
     background-color: #dc181e;
 }
-.etiquetas.autodidacta{
+
+.etiquetas.autodidacta {
     background-color: #ed3084;
 }
+
 /* Comentario */
-.comentarios{
+.comentarios {
     grid-area: comentarios;
-    padding: 30px;
+    padding: 1.875em;
 }
-.input-comentario{
+
+.input-comentario {
     padding: 10px 10px 10px 40px;
     border-radius: 10px;
     background-color: #f2f2f2;
@@ -118,16 +148,18 @@ img{
     max-width: 100%;
     box-sizing: border-box;
     margin: 20px 0;
-    
 }
-.caja-input-comentar{
+
+.caja-input-comentar {
     position: relative;
 }
-.foto-comentario.foto-amigo{
-    width: 30px;
-    height: 30px;
+
+.foto-comentario.foto-amigo {
+    width: 1.875em;
+    height: 1.875em;
 }
-.foto-comentario{
+
+.foto-comentario {
     position: absolute;
     left: 5px;
     top: 0;
@@ -135,22 +167,69 @@ img{
     bottom: 0;
     margin: auto 0;
 }
-.perfil{
+
+.perfil {
     display: flex;
     align-items: center;
     padding: 10px 0;
 }
-.comentario-perfil{
+
+.comentario-perfil {
     padding-left: 10px;
 }
+
 /* sugerencias */
-.sugerencias{
+.sugerencias {
     grid-area: sugerencias;
-    padding: 30px;
+    padding: 1.875em;
 }
-.sugerencia{
+
+.sugerencia {
     padding: 15px 15px 15px 0;
 }
-.sugerencia p{
+
+.sugerencia p {
     margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+    body {
+        font-size: 13px;
+    }
+
+    /* Grid global */
+    .container {
+        grid-template-columns: minmax(300px,1fr);
+        grid-template-areas:
+            "video"
+            "infoVideo"
+            "comentarios"
+            "sugerencias";
+    }
+    .sidebar{
+        display: none;
+    }
+    /* video */
+    .barra-herramientas-video{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .marcas{
+        padding:20px 0;
+    }
+}
+@media (min-width: 576px) and (max-width:991px) {
+    body{
+        font-size: 11px;
+    }
+    .container {
+        grid-template-columns: minmax(300px,1fr) minmax(200px,300px);
+        grid-template-rows: 400px;
+        grid-template-areas:
+            "video video"
+            "infoVideo infoVideo"
+            "comentarios sugerencias";
+    }
 }
