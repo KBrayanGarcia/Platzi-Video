@@ -196,7 +196,11 @@ img {
     body {
         font-size: 13px;
     }
-
+    .info-video,
+    .comentarios,
+    .sugerencias{
+        padding: 15px 0;
+    }
     /* Grid global */
     .container {
         grid-template-columns: minmax(300px,1fr);
