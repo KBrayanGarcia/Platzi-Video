@@ -66,7 +66,12 @@ img {
 
 .foto-amigo {
     border-radius: 50%;
-    width: initial;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 .nombre-amigo {
@@ -196,7 +201,11 @@ img {
     body {
         font-size: 13px;
     }
-
+    .info-video,
+    .comentarios,
+    .sugerencias{
+        padding: 15px 0;
+    }
     /* Grid global */
     .container {
         grid-template-columns: minmax(300px,1fr);
